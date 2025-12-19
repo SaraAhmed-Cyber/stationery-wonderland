@@ -1,0 +1,470 @@
+/*Sara Ahmed 60309296*/
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+   background-color: white;
+   width: 100%;
+   border: 5px solid  rgb(160, 206, 223);
+   width: 98%;
+   margin: 0 auto;
+   max-width: 8000px;
+   min-width: 1000px;
+
+}
+
+#header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(160, 206, 223);
+
+}
+
+#welcome{
+    font-family:"comic Sans Ms", sans-serif;
+    margin-left: 100px;
+    font-size: 30px ;
+    text-align: center;
+    color: rgb(68, 68, 69)
+}
+
+#welcomet{
+    margin-left: 10px;
+}
+
+#logo>a> img{
+    
+    width: 200px;
+    
+}
+
+
+#search input{
+    width: 500px;
+    padding: 10px;
+}
+
+
+
+#search button{
+    background-color: #007bff;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+#icon{
+    display: flex;
+}
+
+
+#icon img{
+    width: 50px;
+    border-radius: 40px;
+    padding: 10px;
+    transition: trasform 0.3s ease;
+}
+
+#icon img:hover{
+    transform: scale(1.1);
+}
+
+
+/*2nd line*/
+#caratagoreis>ul{
+    justify-content: space-evenly;
+    display: flex;
+    list-style: none;
+    background-color: rgb(208, 236, 246);
+    padding: 15px;
+    
+}
+
+#caratagoreis>ul>li>a{
+    text-decoration: none;
+    color: black;
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+
+/*main section*/
+
+#main{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+#left,#right{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;  
+} 
+
+
+
+
+#left img, #right img{
+    width: 100px;
+    margin-left: 10px;
+    border: 2px solid rgb(208, 236, 246);
+    transition: trasform 0.3 ease;
+}
+
+#left img:hover, #right img:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+/*price label*/
+
+
+#left label{
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: black;
+    width: 110px;
+    margin-left: 20px;
+    background-color: #f1dfc3;
+    margin-top: 0;
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+#right label{
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: black;
+    width: 110px;
+    margin-left: 20px;
+    background-color: #f1dfc3;
+    margin-top: 0;
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+
+#left a{
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+#right a{
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+
+
+
+
+
+#mid img{
+    margin-left: 40px;
+    width: 490px;
+    border: solid 2px rgb(208, 236, 246);
+    overflow: hidden;
+}
+
+#mid label{
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: black;
+    width: 490px;
+    margin-left: 40px;
+    background-color: #f1dfc3;
+    margin-top: 0;
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+#mid a{
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+
+
+
+/*moving text*/
+marquee{
+    background-color: lightcoral;
+    padding: 5px;
+    font-family:"comic Sans Ms", sans-serif;
+    color: aliceblue;
+}
+
+
+/*circle*/
+
+#circle{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-left: 100px;
+}
+
+ #circle img{
+    width: 100px;
+    border: 5px solid rgb(208, 236, 246);
+    border-radius: 60px;
+    transition: trasform 0.3 ease;
+}
+
+#circle img:hover{
+    transform: scale(1.1);
+}
+
+#circle label{
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: black;
+    width: 90px;
+    margin-left: 15px;
+    background-color: #f1dfc3;
+    margin-top: 0;
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+
+#circle a{
+    text-decoration: none;
+    text-align: center;
+}
+
+/**/
+#circle .off{
+    color: #ff0000;
+}
+
+
+/*layer*/
+
+#contact{
+    background-color: rgb(208, 236, 246);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+#contact a{
+    text-decoration: none;
+    color: black;
+    font-family:"comic Sans Ms", sans-serif;
+    
+}
+
+
+/*footer*/
+
+#footer{
+    background-color: rgb(160, 206, 223);
+    
+    font-family:"comic Sans Ms", sans-serif;
+    text-align: center;
+}
+
+#footer img{
+width: 40px;
+border-radius: 60PX;
+transition: trasform 0.3ms ease;
+
+}
+
+#footer img:hover{
+    transform: scale(1.1);
+}
+
+#footer div{
+    display: flex;
+    justify-content: space-evenly;
+     padding-bottom: 10px;
+   
+}
+
+/*page2 the main section part*/
+
+#page2main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    
+    
+}
+#page2main div{
+    display: block;
+    text-align: center;
+    border: solid 6px rgb(208, 236, 246);
+    margin: 40px;
+    border-radius: 10px;
+    transition: trasform 0.3ms ease;
+    padding-bottom: 50px;   
+}
+
+#page2main img{
+    width:80%;
+    height: 80%;
+    object-fit: cover;
+    border: 2px solid;
+    margin-top: 8px;
+    border-radius: 10px;
+    margin-left: 27px;   
+}
+
+#page2main div:hover{
+    transform: scale(1.1);
+}
+
+
+
+#page2main .eachimg{
+    display: grid;
+    grid-template-rows: repeat(1fr,5);
+    justify-content: center;
+}
+
+#page2main label{
+    font-family:"comic Sans Ms", sans-serif;
+}
+
+#page2main .size{
+    font-size: 10px;
+    
+}
+
+#page2main .title{
+    color: #007bff;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#page2main .price{
+    color: rgb(210, 52, 52);
+    font-weight: bold;
+}
+
+
+ #page2{
+    background-color: white;
+}
+
+
+/*form 1 subscriber page*/
+
+
+#form1 fieldset{
+    
+    width: 500px;
+    padding: 10px;
+    margin: 0 auto;
+    border-color: rgb(208, 236, 246);
+    font-family:"comic Sans Ms", sans-serif;
+    margin-top: 20px;
+}
+
+
+
+
+#form1 legend{
+    background-color:rgb(208, 236, 246);
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+#submit{
+    margin-left: 600px;
+    font-size: 20px;
+    font-family:"comic Sans Ms", sans-serif;
+    margin-bottom: 10px;
+}
+
+
+/* contact page*/
+
+#contactus fieldset{
+    width: 500px;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    border-color: rgb(208, 236, 246);
+    font-family:"comic Sans Ms", sans-serif;
+    margin-top: 20px;
+    
+
+}
+
+#contactus legend{
+    background-color:rgb(208, 236, 246);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#location{
+    width: 500px;
+    height: 600px;
+}
+
+#contactus #submit2, #reset{
+    margin-left: 110px;
+    font-size: 20px;
+    font-family:"comic Sans Ms", sans-serif;
+    margin-bottom: 10px;
+}
+
+/* THE FAQ*/
+
+.faq{
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.faq h1{
+    font-family: "comic Sans Ms", sans-serif;
+}
+
+#labelsearch{
+    font-family: "comic Sans Ms", sans-serif;
+}
+
+
+.faq-all{
+    border-bottom: 1px solid lightblue;
+    padding: 10px 0;
+}
+
+.ques{
+    cursor: pointer;
+    font-family: "comic Sans Ms", sans-serif;
+}
+
+.answer{
+    display: none;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-family: "comic Sans Ms", sans-serif;
+    background-color: #f4faff;
+    border-left: 3px solid lightblue;
+}
+
+.message{
+    display: none;
+    color: lightcoral;
+}

@@ -1,0 +1,213 @@
+<!--sara ahmed 60309296-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationary Wonderland | Subscriber Page</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+     <header id="header">
+        <div id="logo"><a href="../html/index.html"><img src="../images/logo.png"></a></div>
+        <div id="search">
+            
+        </div>
+        <div id="icon">
+            <p id="welcome">Welcome to Stationary Wonderland, where quality stationary meets creativity and style.</p>
+            
+        </div>
+    </header>
+
+
+    <nav id="caratagoreis">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/products.html">Products</a></li>
+            <li id="icon1"><a href="../html/subscriber.html">Subscriber</a></i>
+            <li id="icon1"><a href="../html/review.html">Reviews</a></i>
+        </ul>
+    </nav>
+
+    <form id="form1" action="https://sit.udst.edu.qa/processform.php" method="POST" onsubmit="return subscribe()">
+        <fieldset >
+            <legend>User Information</legend>
+            
+                Full Name :
+                <input type="text" id="name" name="name"><br><br>
+            
+
+            
+                UserName :
+                <input type="text"  id="username" name="username"><br><br>
+            
+
+            
+                Password :
+                <input type="password"  id="password" name="password"><br><br>
+            
+
+            
+                Confirm Password :
+                <input type="password"  id="confirmpassword" name="confirmpassword"><br><br>
+            
+
+            
+                Email :
+                <input type="email"  id="email" name="email"><br><br>
+            
+
+            
+                Confirm Email:
+                <input type="email"  id="confirmemail" name="confirmemail"><br><br>
+            
+
+            
+                Phone :
+                <input type="text" value="+974 " id="phone" name="phone"><br><br>
+            
+
+            
+                Birth day :
+                <input type="date"  id="birth" name="birth"><br><br> 
+            
+
+            
+                Age :
+                <input type="number" id="age" name="age"><br><br>
+            
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Shipping Address</legend>
+            
+                Building Number :
+                <input type="text"  id="buildingnumber" name="buildingnumber"><br><br>
+            
+
+            
+                Street Name :
+                <input type="text"  id="street" name="street"><br><br>
+            
+            Select a city :
+            <select name="city">
+                <option>Doha</option>
+                <option>Al Kheesa</option>
+                <option>Al Kretyyat</option>
+                <option>Um Amad</option>
+                <option>Um Salal</option>
+            </select><br><br>            
+
+                <input type="checkbox">
+                Would you like to Subscribe to tour new sletter?
+            
+        </fieldset>
+        <br>
+        <input type="submit" id="submit" value="submit">
+    </form>
+
+
+    <div id="contact">
+    <div><a href="../html/contact.html">Contact Us</a></div>
+    <div><a href="../html/about.html">About Us</a></div>
+    <div><a href="../html/faq.html">FAQ</a></div>
+</div>
+
+<footer id="footer">
+    <p>Follow us</p>
+    <div>
+        <a href="#"><img src="../images/ins.png"></a>
+        <a href="#"><img src="../images/whats.png"></a>
+    </div>
+    
+</footer>
+
+
+
+
+    <script>
+        function subscribe(){
+    let fulname = document.getElementById('name').value.trim();
+    let user = document.getElementById('username').value.trim();
+    let pass = document.getElementById('password').value.trim();
+    let conpass = document.getElementById('confirmpassword').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let conemail = document.getElementById('confirmemail').value.trim();
+    let phone = document.getElementById('phone').value.trim();
+    let dob = document.getElementById('birth').value.trim();
+    let age = document.getElementById('age').value.trim();
+    let builnum = document.getElementById('buildingnumber').value.trim();
+    let street = document.getElementById('street').value.trim();
+
+   
+     if(fulname === "" || user ==="" || pass ==="" || conpass === "" ||
+         email === "" || conemail === "" || phone === "" || dob === "" ||
+          age === "" || builnum === "" || street === ""){
+            alert('please complete all fields.');
+            return false;
+          }
+
+    if(fulname.includes("0") || fulname.includes("1") || fulname.includes("2") || fulname.includes("3") ||
+         fulname.includes('4') || fulname.includes("5") || fulname.includes("6") || fulname.includes('7') ||
+          fulname.includes('8') || fulname.includes('9')){
+            alert('Your name should not have any number.');
+            return false;
+          }
+
+             
+
+    if( pass !== conpass){
+        alert("Your Password do not match.");
+         return false;}   
+
+
+
+    if(!email.includes("@") || !email.includes(".")){
+        alert('please enter a valid email address');
+        return false;
+    }
+
+
+
+    if( email !== conemail){
+        alert("Email do not match.");
+        return false;
+    } 
+    
+    if(!phone.startsWith("+974")){
+        alert("Your phone number should start with +974 xxxxxxxx");
+        return false;
+    }
+
+    let phonumber = phone.replace('+974',"").replace(" ","");
+    if(isNaN(phonumber) || phonumber === ""){
+        alert('Phone nuber must have only numbers after +974 xxxxxxxx');
+        return false;
+    } 
+
+
+
+    
+    if(age < 18 || age > 100){
+        alert('Age must be between 18 and 100.');
+        return false;
+    }
+
+    let birth = new Date(dob);
+    let today = new Date();
+    let math = today.getFullYear() - birth.getFullYear();
+
+    if(math != age){
+        alert("Your age does not match the Date of Birth.")
+        return false;
+    }
+
+    
+
+    return true;
+        }
+
+    </script>
+</body>
+</html>

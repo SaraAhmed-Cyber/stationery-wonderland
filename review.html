@@ -1,0 +1,268 @@
+<!--sara ahmed 60309296-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Stationary Wonderland | Reviews</title>
+    <link rel="stylesheet" href="../css/home.css">
+
+    <style>
+        body {
+            font-family: "Comic Sans MS", sans-serif;
+           
+        }
+
+        .review-box {
+            border: 1px solid lightblue;
+            background-color: #f7faff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            width: 1000px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .review-box img {
+            width: 120px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .form-area {
+            margin: 30px 10px 10px 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .form-area input, .form-area textarea, .form-area select {
+            width: 90%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            font-family: "Comic Sans MS", sans-serif;
+        }
+
+        #preview {
+            width: 120px;
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 8px 14px;
+            cursor: pointer;
+            border: none;
+            background-color: steelblue;
+            color: white;
+            border-radius: 6px;
+            margin-left: 50%;
+        }
+
+        h1{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="logo"><a href="../html/index.html"><img src="../images/logo.png"></a></div>
+        <div id="search">
+            
+        </div>
+        <div id="icon">
+            <p id="welcome">Welcome to Stationary Wonderland, where quality stationary meets creativity and style.</p>
+            
+        </div>
+    </header>
+
+
+    <nav id="caratagoreis">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/products.html">Products</a></li>
+            <li id="icon1"><a href="../html/subscriber.html">Subscriber</a></i>
+            <li id="icon1"><a href="../html/review.html">Reviews</a></i>
+        </ul>
+    </nav>
+
+    <h1>Customer Reviews</h1>
+
+    <!-- dislay the reviews here -->
+    <div id="reviews"></div>
+
+    <!-- user input review Form -->
+    <div class="form-area">
+        <h2>Add Your Review</h2>
+
+        <label>Name:</label>
+        <input type="text" id="name"><br>
+
+        <label>Rating:</label>
+        <select id="rating">
+            <option value="">Select Rating</option>
+            <option value="★★★★★">★★★★★</option>
+            <option value="★★★★☆">★★★★☆</option>
+            <option value="★★★☆☆">★★★☆☆</option>
+            <option value="★★☆☆☆">★★☆☆☆</option>
+            <option value="★☆☆☆☆">★☆☆☆☆</option>
+        </select><br>
+
+        <label>Review:</label><br>
+        <textarea id="text"></textarea><br>
+
+        <label>Upload Image (optional):</label>
+        <input type="file" id="imageInput" accept="image/*">
+
+        <img id="preview"><br>
+
+        <button onclick="addReview()">Submit</button>
+    </div>
+
+
+
+
+
+        <div id="contact">
+    <div><a href="../html/contact.html">Contact Us</a></div>
+    <div><a href="../html/about.html">About Us</a></div>
+    <div><a href="../html/faq.html">FAQ</a></div>
+</div>
+
+<footer id="footer">
+    <p>Follow us</p>
+    <div>
+        <a href="#"><img src="../images/ins.png"></a>
+        <a href="#"><img src="../images/whats.png"></a>
+    </div>
+    
+</footer>
+
+
+    <script>
+        // --- examples of users reviews as list  ---
+        let reviews = [
+            {
+                name: "Aisha",
+                rating: "★★★★★",
+                text: "Beautiful notebooks and fast delivery!",
+                image: ""
+            },
+            {
+                name: "Hamad",
+                rating: "★★★★☆",
+                text: "Good quality pens.",
+                image: ""
+            }
+        ];
+
+        let preview = document.getElementById("preview");
+        let imageInput = document.getElementById("imageInput");
+
+        // --- function to store user reviews ---
+        function saveReviews() {
+            localStorage.setItem("reviewsData", JSON.stringify(reviews));
+        }
+
+        // --- safing the reviews---
+        function loadReviews() {
+            let saved = localStorage.getItem("reviewsData");
+            if (saved) {
+                reviews = JSON.parse(saved);
+            }
+        }
+
+        // --- img adding ---
+        imageInput.onchange = function () {
+            let file = imageInput.files[0];
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        // --- DISPLAY REVIEWS ON SCREEN ---
+        function showReviews() {
+            let container = document.getElementById("reviews");
+            container.innerHTML = "";
+
+            for (let i = 0; i < reviews.length; i++) {
+                let r = reviews[i];
+
+                let box = document.createElement("div");
+                box.className = "review-box";
+
+                // adding text
+                box.innerHTML = `
+                    <strong>${r.name}</strong><br>
+                    Rating: ${r.rating}<br>
+                    <p>${r.text}</p>
+                `;
+
+                // Image OR "No image"
+                if (r.image !== "") {
+                    box.innerHTML += `<img src="${r.image}">`;
+                } else {
+                    box.innerHTML += `<p>📷 No image</p>`;
+                }
+
+                container.appendChild(box);
+            }
+        }
+
+        //  Load saved reviews when the page opens
+        loadReviews();
+        showReviews();
+
+        // --- users input (adding their reviews) ---
+        function addReview() {
+            let name = document.getElementById("name").value.trim();
+            let rating = document.getElementById("rating").value;
+            let text = document.getElementById("text").value.trim();
+
+            if (name === "" || rating === "" || text === "") {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            let imageData = "";
+            if (preview.src && preview.style.display === "block") {
+                imageData = preview.src; 
+            }
+
+            let newReview = {
+                name: name,
+                rating: rating,
+                text: text,
+                image: imageData
+            };
+
+            reviews.push(newReview);
+            saveReviews();   
+            showReviews(); 
+
+            // reset form
+            document.getElementById("name").value = "";
+            document.getElementById("rating").value = "";
+            document.getElementById("text").value = "";
+            imageInput.value = "";
+            preview.style.display = "none";
+
+            alert("Review added successfully!");
+        }
+    </script>
+
+</body>
+</html>
+

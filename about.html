@@ -1,0 +1,140 @@
+<!--sara ahmed 60309296-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationary Wonderland | About Us</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <style>
+       .about{
+        width: 80%;
+        max-width: 900px;
+        margin: 15px auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid lightblue;
+        text-align: center;
+       }
+
+
+       .term{
+        font-weight: bold;
+        cursor: pointer;
+        font-family: "comic Sans Ms", sans-serif;
+        margin: 10px;
+        margin-bottom: 10px;
+        color: lightcoral;
+       }
+
+       .expain{
+        display: none;
+        margin-top: 5px;
+        font-family: "comic Sans Ms", sans-serif;
+        margin: 10px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        background-color: #f4faff;
+        border-left: 3px solid lightblue;
+       }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="logo"><a href="../html/index.html"><img src="../images/logo.png"></a></div>
+        <div id="search">
+            
+        </div>
+        <div id="icon">
+            <p id="welcome">Welcome to Stationary Wonderland, where quality stationary meets creativity and style.</p>
+            
+        </div>
+    </header>
+
+
+    <nav id="caratagoreis">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/products.html">Products</a></li>
+            <li id="icon1"><a href="../html/subscriber.html">Subscriber</a></i>
+            <li id="icon1"><a href="../html/review.html">Reviews</a></i>
+        </ul>
+    </nav>
+
+ <div class="about">
+            <div class="term">About Stationary Wonderland</div>
+            <div class="expain">Stationary Wonderland was created with one goal in mind — to bring creativity, 
+                                color, and joy into everyday life. We believe that stationery is more than just pens and paper; 
+                                it’s a way to express yourself, stay organized, and make every day a little more magical.</div>
+        </div>
+
+        <div class="about">
+            <div class="term">Our Mission</div>
+            <div class="expain">Our mission is to offer high-quality, affordable, and beautifully designed stationery products 
+                                that inspire students, artists, and stationery lovers of all ages.</div>
+        </div>
+
+        <div class="about">
+            <div class="term">What We Offer</div>
+            <div class="expain">At Stationary Wonderland, you’ll find:<br>
+                * Unique and stylish notebooks<br><br>
+                * Quality pens and writing tools<br><br>
+                * Colorful planners and organizers<br><br>
+                * Creative school and office supplies<br><br>
+                * Seasonal stationery collections</div>
+        </div>
+
+        <div class="about">
+            <div class="term">Why Choose Us?</div>
+            <div class="expain">* We care about quality and design<br><br>
+                * We offer products that are practical and beautiful<br><br>
+                * We aim to make your shopping experience easy and enjoyable<br><br>
+                * We are passionate about creativity, productivity, and organization</div>
+        </div>
+
+        <div class="about">
+            <div class="term">Our Story</div>
+            <div class="expain">Stationary Wonderland began as a small idea inspired by a love for cute and useful stationery. 
+                Today, we continue to grow while keeping our passion for creativity at the heart of everything we do.</div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="contact">
+    <div><a href="../html/contact.html">Contact Us</a></div>
+    <div><a href="../html/about.html">About Us</a></div>
+    <div><a href="../html/faq.html">FAQ</a></div>
+</div>
+
+<footer id="footer">
+    <p>Follow us</p>
+    <div>
+        <a href="#"><img src="../images/ins.png"></a>
+        <a href="#"><img src="../images/whats.png"></a>
+    </div>
+    
+</footer>
+
+
+<script>
+        let term = document.getElementsByClassName("term");
+
+        for (let i = 0; i < term.length; i++){
+            term[i].onclick = function(){
+                let expain = this.nextElementSibling;
+
+                if ( expain.style.display === "block"){
+                    expain.style.display = 'none';
+                }else{
+                    expain.style.display = "block";
+                }
+            };
+        }
+</script>
+
+    
+</body>
+</html>

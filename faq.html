@@ -1,0 +1,186 @@
+<!--sara ahmed 60309296-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stationary Wonderland | FAQ</title>
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <header id="header">
+        <div id="logo"><a href="../html/index.html"><img src="../images/logo.png"></a></div>
+        <div id="search">
+            
+        </div>
+        <div id="icon">
+            <p id="welcome">Welcome to Stationary Wonderland, where quality stationary meets creativity and style.</p>
+            
+        </div>
+    </header>
+
+
+    <nav id="caratagoreis">
+        <ul>
+            <li><a href="../html/index.html">Home</a></li>
+            <li><a href="../html/products.html">Products</a></li>
+            <li id="icon1"><a href="../html/subscriber.html">Subscriber</a></i>
+            <li id="icon1"><a href="../html/review.html">Reviews</a></i>
+        </ul>
+    </nav>
+
+    <div class="faq">
+        <h1>Frequenty Asked Questions</h1><br><br>
+
+        <div class="search">
+            <label id="labelsearch">Search in FAQ:</label>
+            <input type="text" id="faqsearch" placeholder="search here">
+            <p id="message" class="message">Sorry no result found.</p>
+
+        </div><br><br>
+
+
+        
+<div class="faq-all">
+    <div class="ques">1. What is the website about?</div>
+    <div class="answer">This website is a student project that shows basic web pages like home, FAQ, inventory, and reviews.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">2. How can I contact you?</div>
+    <div class="answer">You can contact us by email at shop.stationarywonderland@gmail.com. For more information, visit the <a href="../html/contact.html">Contact Us</a> page.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">3. Do you offer shipping?</div>
+    <div class="answer">Yes, we offer local shipping within Qatar. Delivery usually takes 3–5 working days.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">4. What payment methods do you accept?</div>
+    <div class="answer">We currently accept cash on delivery and credit card payments.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">5. Can I return a product?</div>
+    <div class="answer">Yes, you can return products within 7 days if they are in their original condition.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">6. How long does delivery take?</div>
+    <div class="answer">Most orders arrive within 1–3 days depending on your location.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">7. Do you restock sold-out items?</div>
+    <div class="answer">Yes, popular items are restocked regularly. You can message us to check availability.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">8. Are the product colors exactly like the pictures?</div>
+    <div class="answer">We try our best to show accurate colors, but lighting and screen settings may cause small differences.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">9. Can I order without creating an account?</div>
+    <div class="answer">Yes! You can place an order as a guest without logging in.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">10. How do I leave a review?</div>
+    <div class="answer">Go to the product page, scroll to the review section, and click “Write a Review.” You can also upload images.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">11. What should I do if I receive a damaged item?</div>
+    <div class="answer">Please contact us within 24 hours with photos, and we will replace the item.</div>
+</div>
+
+
+<div class="faq-all">
+    <div class="ques">12. Do you offer discounts or promotions?</div>
+    <div class="answer">Yes! We offer seasonal sales, special deals, and exclusive discounts for subscribers.</div>
+</div>
+
+
+    </div>
+
+
+    
+
+
+
+
+    <div id="contact">
+    <div><a href="../html/contact.html">Contact Us</a></div>
+    <div><a href="../html/about.html">About Us</a></div>
+    <div><a href="../html/faq.html">FAQ</a></div>
+</div>
+
+<footer id="footer">
+    <p>Follow us</p>
+    <div>
+        <a href="#"><img src="../images/ins.png"></a>
+        <a href="#"><img src="../images/whats.png"></a>
+    </div>
+    
+</footer>
+<script>
+        let ques = document.getElementsByClassName("ques");
+
+        for (let i = 0; i < ques.length; i++){
+            ques[i].onclick = function(){
+                let answer = this.nextElementSibling;
+
+                if ( answer.style.display === "block"){
+                    answer.style.display = 'none';
+                }else{
+                    answer.style.display = "block";
+                }
+            };
+        }
+
+
+        let searchInput = document.getElementById('faqsearch');
+        let message = document.getElementById('message');
+
+        searchInput.onkeyup = function(){
+            let filter = searchInput.value.toLowerCase();
+            let faqall = document.getElementsByClassName('faq-all');
+            let visibleCount = 0;
+
+            for( let i = 0; i < faqall.length; i++){
+                let q = faqall[i].getElementsByClassName('ques')[0];
+                let text = q.innerText.toLowerCase();
+
+                if (text.indexOf(filter) > -1){
+                    faqall[i].style.display = '';
+                    visibleCount++;
+                }else{
+                    faqall[i].style.display = "none";
+                }
+                }
+            
+        
+
+            if(visibleCount === 0 && filter !== ""){
+                message.style.display = "block";
+            }else{
+                message.style.display = "none";
+            }
+        
+        };
+    </script>
+
+</body>
+</html>
